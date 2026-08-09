@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Brave Trader provides professional account management focused on precious metals and market indices."
+    >
+
+    <title>Brave Trader | Professional Account Management</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo" aria-label="Brave Trader Home">
+            <span>BRAVE</span>
+            <strong>TRADER</strong>
+        </a>
+
+
+        <nav class="nav-links">
+
+    <a href="#home" class="active">
+        Home
+    </a>
+
+    <a href="#services">
+        Services
+    </a>
+
+    <a href="#approach">
+        Our Approach
+    </a>
+
+    <a href="faq.html">
+        FAQ
+    </a>
+
+    <a href="#contact" class="mobile-get-started">
+        Get Started →
+    </a>
+
+</nav>
+
+<a href="#contact" class="nav-button">
+    Get Started
+</a>
+
+<button
+    class="menu-button"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+>
+    ☰
+</button>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    PROFESSIONAL ACCOUNT MANAGEMENT
+                </p>
+
+
+                <h1>
+                    Navigate the markets
+                    <span>with confidence.</span>
+                </h1>
+
+
+                <p class="hero-description">
+                    Brave Trader provides focused account management
+                    across precious metals and major market indices,
+                    combining structured strategies with disciplined
+                    risk management.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#services"
+                        class="primary-button"
+                    >
+                        Explore Services
+                    </a>
+
+
+                    <a
+                        href="#approach"
+                        class="secondary-button"
+                    >
+                        Our Approach →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MARKET DASHBOARD
+            ================================================== -->
+
+            <div class="hero-visual">
+
+                <div class="market-card">
+
+                    <!-- Dashboard Header -->
+
+                    <div class="market-header">
+
+                        <div class="dashboard-heading">
+
+                            <span class="dashboard-label">
+                                BRAVE TRADER
+                            </span>
+
+                            <strong class="dashboard-title">
+                                Market Overview
+                            </strong>
+
+                        </div>
+
+
+                        <span class="market-status">
+                            <span class="status-dot"></span>
+                            MARKET FOCUS
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Market Selector -->
+
+                    <div class="market-selector">
+
+                        <button
+                            class="market-tab active"
+                            type="button"
+                            data-market="gold"
+                        >
+                            <span>Gold</span>
+                            <small>XAU/USD</small>
+                        </button>
+
+
+                        <button
+                            class="market-tab"
+                            type="button"
+                            data-market="silver"
+                        >
+                            <span>Silver</span>
+                            <small>XAG/USD</small>
+                        </button>
+
+
+                        <button
+                            class="market-tab"
+                            type="button"
+                            data-market="indices"
+                        >
+                            <span>Indices</span>
+                            <small>GLOBAL</small>
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Chart -->
+
+                    <div class="chart-wrapper">
+
+                        <div class="chart-info">
+
+                            <div>
+
+                                <small>
+                                    MARKET
+                                </small>
+
+                                <strong id="chart-market">
+                                    XAU/USD
+                                </strong>
+
+                            </div>
+
+
+                            <div class="chart-direction">
+
+                                <span class="direction-dot"></span>
+
+                                <span id="chart-status">
+                                    Focused
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="chart-area">
+
+                            <div class="chart-grid"></div>
+
+
+                            <svg
+                                class="market-chart"
+                                viewBox="0 0 600 260"
+                                preserveAspectRatio="none"
+                                aria-label="Illustrative market chart"
+                            >
+
+                                <defs>
+
+                                    <linearGradient
+                                        id="chartFill"
+                                        x1="0"
+                                        y1="0"
+                                        x2="0"
+                                        y2="1"
+                                    >
+
+                                        <stop
+                                            offset="0%"
+                                            stop-opacity="0.22"
+                                        />
+
+                                        <stop
+                                            offset="100%"
+                                            stop-opacity="0"
+                                        />
+
+                                    </linearGradient>
+
+                                </defs>
+
+
+                                <!-- Filled chart area -->
+
+                                <path
+                                    id="chart-fill"
+                                    class="chart-fill"
+                                    d="
+                                        M0,205
+                                        L45,185
+                                        L90,195
+                                        L135,145
+                                        L180,160
+                                        L225,120
+                                        L270,140
+                                        L315,95
+                                        L360,110
+                                        L405,72
+                                        L450,88
+                                        L495,50
+                                        L540,65
+                                        L600,25
+                                        L600,260
+                                        L0,260
+                                        Z
+                                    "
+                                ></path>
+
+
+                                <!-- Chart line -->
+
+                                <path
+                                    id="chart-path"
+                                    class="chart-path"
+                                    d="
+                                        M0,205
+                                        L45,185
+                                        L90,195
+                                        L135,145
+                                        L180,160
+                                        L225,120
+                                        L270,140
+                                        L315,95
+                                        L360,110
+                                        L405,72
+                                        L450,88
+                                        L495,50
+                                        L540,65
+                                        L600,25
+                                    "
+                                ></path>
+
+
+                                <!-- Current point -->
+
+                                <circle
+                                    id="chart-point"
+                                    class="chart-point"
+                                    cx="600"
+                                    cy="25"
+                                    r="6"
+                                ></circle>
+
+
+                                <circle
+                                    id="chart-point-ring"
+                                    class="chart-point-ring"
+                                    cx="600"
+                                    cy="25"
+                                    r="12"
+                                ></circle>
+
+                            </svg>
+
+                        </div>
+
+
+
+                        <div class="chart-footer">
+
+                            <span>
+                                Illustrative market view
+                            </span>
+
+                            <span>
+                                Focused markets
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Market Summary -->
+
+                    <div class="market-data">
+
+                        <div class="market-data-item">
+
+                            <small>
+                                METAL
+                            </small>
+
+                            <strong>
+                                Gold
+                            </strong>
+
+                        </div>
+
+
+                        <div class="market-data-item">
+
+                            <small>
+                                METAL
+                            </small>
+
+                            <strong>
+                                Silver
+                            </strong>
+
+                        </div>
+
+
+                        <div class="market-data-item">
+
+                            <small>
+                                MARKET
+                            </small>
+
+                            <strong>
+                                Indices
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MARKET STRIP
+        ====================================================== -->
+
+        <section class="market-strip">
+
+            <div class="market-item">
+
+                <span>01</span>
+
+                <strong>GOLD</strong>
+
+                <small>XAU/USD</small>
+
+            </div>
+
+
+            <div class="market-item">
+
+                <span>02</span>
+
+                <strong>SILVER</strong>
+
+                <small>XAG/USD</small>
+
+            </div>
+
+
+            <div class="market-item">
+
+                <span>03</span>
+
+                <strong>INDICES</strong>
+
+                <small>GLOBAL MARKETS</small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section
+            class="section services"
+            id="services"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    WHAT WE DO
+                </p>
+
+
+                <h2>
+                    Focused management.
+                    <span>Clear direction.</span>
+                </h2>
+
+
+                <p>
+                    Our services are centered around selected markets,
+                    allowing us to maintain a focused and structured
+                    approach to account management.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-grid">
+
+                <!-- Gold -->
+
+                <article class="service-card">
+
+                    <span class="service-number">
+                        01
+                    </span>
+
+
+                    <div class="service-icon">
+                        ◆
+                    </div>
+
+
+                    <h3>
+                        Gold
+                    </h3>
+
+
+                    <p>
+                        Account management focused on the gold market,
+                        including XAU/USD.
+                    </p>
+
+
+                    <a href="#contact">
+                        Learn more →
+                    </a>
+
+                </article>
+
+
+
+                <!-- Silver -->
+
+                <article class="service-card">
+
+                    <span class="service-number">
+                        02
+                    </span>
+
+
+                    <div class="service-icon">
+                        ◇
+                    </div>
+
+
+                    <h3>
+                        Silver
+                    </h3>
+
+
+                    <p>
+                        Structured management focused on silver,
+                        including XAG/USD.
+                    </p>
+
+
+                    <a href="#contact">
+                        Learn more →
+                    </a>
+
+                </article>
+
+
+
+                <!-- Indices -->
+
+                <article class="service-card">
+
+                    <span class="service-number">
+                        03
+                    </span>
+
+
+                    <div class="service-icon">
+                        ◈
+                    </div>
+
+
+                    <h3>
+                        Indices
+                    </h3>
+
+
+                    <p>
+                        Focused account management across selected
+                        global market indices.
+                    </p>
+
+
+                    <a href="#contact">
+                        Learn more →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             APPROACH
+        ====================================================== -->
+
+        <section
+            class="section approach"
+            id="approach"
+        >
+
+            <div class="approach-content">
+
+                <p class="eyebrow">
+                    OUR APPROACH
+                </p>
+
+
+                <h2>
+                    Strategy built around
+                    <span>discipline.</span>
+                </h2>
+
+
+                <p>
+                    Markets can move quickly. Our approach is built around
+                    structured decision-making, defined risk parameters
+                    and consistent monitoring.
+                </p>
+
+            </div>
+
+
+
+            <div class="process">
+
+                <div class="process-step">
+
+                    <span>01</span>
+
+                    <div>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            We begin by understanding the account,
+                            objectives and risk parameters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>02</span>
+
+                    <div>
+
+                        <h3>
+                            Structure
+                        </h3>
+
+                        <p>
+                            A management approach is structured around
+                            the selected markets.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>03</span>
+
+                    <div>
+
+                        <h3>
+                            Manage
+                        </h3>
+
+                        <p>
+                            Positions are managed according to the
+                            established strategy and risk framework.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>04</span>
+
+                    <div>
+
+                        <h3>
+                            Monitor
+                        </h3>
+
+                        <p>
+                            Accounts and market conditions are continuously
+                            monitored as part of the management process.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHY BRAVE TRADER
+        ====================================================== -->
+
+        <section
+            class="section why-us"
+            id="about"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    WHY BRAVE TRADER
+                </p>
+
+
+                <h2>
+                    A focused approach to
+                    <span>market management.</span>
+                </h2>
+
+            </div>
+
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <span>01</span>
+
+                    <h3>
+                        Focused Markets
+                    </h3>
+
+                    <p>
+                        Specialization in precious metals and indices.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <span>02</span>
+
+                    <h3>
+                        Risk Awareness
+                    </h3>
+
+                    <p>
+                        Decisions are made with risk management at the
+                        center of the process.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <span>03</span>
+
+                    <h3>
+                        Structured Process
+                    </h3>
+
+                    <p>
+                        A defined approach from account assessment
+                        through ongoing management.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <span>04</span>
+
+                    <h3>
+                        Clear Communication
+                    </h3>
+
+                    <p>
+                        Professional communication throughout the
+                        management relationship.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+                <!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta" id="contact">
+
+    <div class="cta-content">
+
+        <p class="eyebrow">
+            BRAVE TRADER
+        </p>
+
+        <h2>
+            Take a more structured
+            approach to your account.
+        </h2>
+
+        <p>
+            Learn more about our account management services
+            and the markets we focus on.
+        </p>
+
+        <div class="contact-options">
+
+    <a
+        href="https://wa.me/2348132596741?text=Hello%20Brave%20Trader%2C%20I%20am%20interested%20in%20learning%20more%20about%20your%20account%20management%20services%20for%20precious%20metals%20and%20indices."
+        class="primary-button"
+        target="_blank"
+        rel="noopener"
+    >
+        WhatsApp →
+    </a>
+
+    <a
+        href="https://t.me/+2348132596741"
+        class="secondary-button"
+        target="_blank"
+        rel="noopener"
+    >
+        Telegram →
+    </a>
+
+</div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-main">
+
+        <!-- Footer Brand -->
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                <span>BRAVE</span>
+                <strong>TRADER</strong>
+            </div>
+
+            <p>
+                Professional account management focused on
+                precious metals and indices.
+            </p>
+
+        </div>
+
+
+        <!-- Footer Navigation -->
+
+        <div class="footer-links">
+
+    <div>
+
+        <h4>Explore</h4>
+
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Our Approach</a>
+
+    </div>
+
+    <div>
+
+        <h4>Company</h4>
+
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</div>
+
+
+<div class="footer-social">
+
+    <h4>Follow Our Social Accounts</h4>
+
+    <div class="social-links">
+
+        <a href="#" target="_blank" rel="noopener">
+            TikTok
+        </a>
+
+        <a href="#" target="_blank" rel="noopener">
+            YouTube
+        </a>
+
+    </div>
+
+</div>
+
+
+    <!-- Risk Disclosure -->
+
+    <div class="risk-disclaimer">
+
+        <strong>
+            Risk Disclosure
+        </strong>
+
+        <p>
+            Trading financial markets involves significant risk and
+            may not be suitable for every investor. Past performance
+            is not indicative of future results. Brave Trader does not
+            guarantee profits or protection against losses.
+        </p>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Brave Trader. All rights reserved.
+        </p>
+
+        <p>
+            Professional Account Management
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
