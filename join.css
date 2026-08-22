@@ -1,0 +1,4299 @@
+/* =========================================================
+  BRAVE TRADER — JOIN US
+   JOIN.CSS — PART 1/5
+   BASE / NAVBAR / HERO / PARTNERSHIP
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --join-navy: #0b1b33;
+    --join-navy-soft: #142944;
+
+    --join-gold: #b28a3c;
+    --join-gold-light: #d0ad63;
+
+    --join-bg: #f7f7f3;
+    --join-panel: #ffffff;
+    --join-panel-soft: #f1f0ea;
+
+    --join-text: #182536;
+    --join-muted: #6d7784;
+
+    --join-border: rgba(11, 27, 51, 0.10);
+
+    --join-shadow:
+        0 20px 55px rgba(11, 27, 51, 0.08);
+
+    --join-radius: 18px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(178, 138, 60, 0.055),
+            transparent 28%
+        ),
+        var(--join-bg);
+
+    color: var(--join-text);
+
+    font-family: "DM Sans", sans-serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: relative;
+
+    width: 100%;
+    height: 76px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(247, 247, 243, 0.90);
+
+    border-bottom: 1px solid var(--join-border);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+.logo-image img {
+
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   DESKTOP NAV LINKS
+========================================================= */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-left: auto;
+    margin-right: 28px;
+}
+
+
+.nav-links > a,
+.nav-home {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 42px;
+
+    padding: 9px 15px;
+
+    border-radius: 9px;
+
+    color: var(--join-text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.nav-links > a:hover,
+.nav-home:hover {
+
+    color: var(--join-gold);
+
+    background: rgba(178, 138, 60, 0.07);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ACTIVE JOIN LINK
+========================================================= */
+
+.nav-links > a.active {
+
+    color: var(--join-gold);
+
+    background: rgba(178, 138, 60, 0.08);
+}
+
+
+.nav-links > a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    bottom: 4px;
+
+    height: 2px;
+
+    background: var(--join-gold);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+
+.nav-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 10px 20px;
+
+    background: var(--join-navy);
+
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.nav-button:hover {
+
+    background: var(--join-gold);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(178, 138, 60, 0.18);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-button {
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 1px solid rgba(178, 138, 60, 0.20);
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: var(--join-navy);
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE GET STARTED
+========================================================= */
+
+.mobile-get-started {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MAIN JOIN PAGE
+========================================================= */
+
+.join-page {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   JOIN HERO
+========================================================= */
+
+.join-hero {
+
+    position: relative;
+
+    min-height: 650px;
+
+    padding:
+        90px
+        6%
+        100px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(380px, 0.82fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO BACKGROUND GLOW
+========================================================= */
+
+.join-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -260px;
+    right: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.12),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+
+.join-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -200px;
+    bottom: -190px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(11, 27, 51, 0.045),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.join-hero-content {
+
+    position: relative;
+
+    max-width: 650px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+
+    margin-bottom: 14px;
+
+    color: var(--join-gold);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.join-hero h1 {
+
+    max-width: 680px;
+
+    margin-bottom: 24px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.03;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 800;
+}
+
+
+.join-hero h1 span {
+
+    display: block;
+
+    color: var(--join-gold);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.join-hero-content > p:not(.eyebrow) {
+
+    max-width: 570px;
+
+    color: var(--join-muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+}
+
+
+.primary-button,
+.secondary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.primary-button {
+
+    background: var(--join-navy);
+
+    color: #ffffff;
+
+    border: 1px solid var(--join-navy);
+
+    box-shadow:
+        0 8px 20px rgba(11, 27, 51, 0.10);
+}
+
+
+.primary-button:hover {
+
+    background: var(--join-gold);
+
+    border-color: var(--join-gold);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(178, 138, 60, 0.16);
+}
+
+
+.secondary-button {
+
+    background: rgba(255, 255, 255, 0.65);
+
+    color: var(--join-navy);
+
+    border: 1px solid var(--join-border);
+}
+
+
+.secondary-button:hover {
+
+    border-color: rgba(178, 138, 60, 0.35);
+
+    color: var(--join-gold);
+
+    background: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PARTNERSHIP CARD
+========================================================= */
+
+.partner-card {
+
+    position: relative;
+
+    padding: 38px;
+
+    min-height: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f1efe8
+        );
+
+    border: 1px solid rgba(178, 138, 60, 0.18);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 65px rgba(11, 27, 51, 0.09);
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.partner-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: rgba(178, 138, 60, 0.35);
+
+    box-shadow:
+        0 30px 75px rgba(11, 27, 51, 0.12),
+        0 0 35px rgba(178, 138, 60, 0.06);
+}
+
+
+/* =========================================================
+   PARTNERSHIP CARD GOLD GLOW
+========================================================= */
+
+.partner-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.18),
+            transparent 68%
+        );
+
+    filter: blur(5px);
+
+    pointer-events: none;
+}
+
+
+.partner-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 120px;
+
+    left: 0;
+    bottom: 40px;
+
+    background:
+        linear-gradient(
+            transparent,
+            var(--join-gold),
+            transparent
+        );
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   PAD NUMBER
+========================================================= */
+
+.join-pad-number {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 22px;
+
+    border-radius: 10px;
+
+    background: rgba(178, 138, 60, 0.09);
+
+    border: 1px solid rgba(178, 138, 60, 0.18);
+
+    color: var(--join-gold);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PARTNER CARD HEADING
+========================================================= */
+
+.partner-card h2 {
+
+    position: relative;
+
+    max-width: 430px;
+
+    margin-bottom: 18px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 31px;
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+
+    z-index: 1;
+}
+
+
+.partner-card h2 span {
+
+    color: var(--join-gold);
+}
+
+
+/* =========================================================
+   PARTNER CARD TEXT
+========================================================= */
+
+.partner-card > p:not(.eyebrow) {
+
+    position: relative;
+
+    max-width: 480px;
+
+    color: var(--join-muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PAD LINE
+========================================================= */
+
+.join-pad-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin: 28px 0 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(178, 138, 60, 0.45),
+            rgba(178, 138, 60, 0.08),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   PAD LABEL
+========================================================= */
+
+.join-pad-label {
+
+    color: #89919b;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   BRAVE TRADER — JOIN US
+   JOIN.CSS — PART 2/5
+   INFORMATION PADS / APPROACH PADS
+========================================================= */
+
+
+/* =========================================================
+   GENERAL JOIN SECTION
+========================================================= */
+
+.join-info-section,
+.join-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 95px 6%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION BACKGROUND DETAILS
+========================================================= */
+
+.join-info-section::before,
+.join-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.055),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.join-info-section::before {
+
+    top: -150px;
+    right: -100px;
+}
+
+
+.join-section::before {
+
+    bottom: -150px;
+    left: -120px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.join-section-heading {
+
+    position: relative;
+
+    max-width: 700px;
+
+    margin-bottom: 48px;
+
+    z-index: 1;
+}
+
+
+.join-section-heading h2 {
+
+    margin-bottom: 18px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.6px;
+
+    font-weight: 800;
+}
+
+
+.join-section-heading h2 span {
+
+    color: var(--join-gold);
+}
+
+
+.join-section-heading > p:not(.eyebrow) {
+
+    max-width: 620px;
+
+    color: var(--join-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ELIGIBILITY / VERIFICATION PAD GRID
+========================================================= */
+
+.join-points {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   JOIN POINT PAD
+========================================================= */
+
+.join-point {
+
+    position: relative;
+
+    min-height: 215px;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f1f0ea
+        );
+
+    border: 1px solid rgba(11, 27, 51, 0.08);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 12px 30px rgba(11, 27, 51, 0.045);
+
+    overflow: hidden;
+
+    cursor: default;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================================
+   GOLD CORNER GLOW
+========================================================= */
+
+.join-point::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    top: -65px;
+    right: -55px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.17),
+            transparent 68%
+        );
+
+    filter: blur(5px);
+
+    opacity: 0.7;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   SUBTLE BOTTOM LINE
+========================================================= */
+
+.join-point::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 28px;
+    right: 28px;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(178, 138, 60, 0.45),
+            transparent
+        );
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* =========================================================
+   PAD HOVER / TOUCH EFFECT
+========================================================= */
+
+.join-point:hover,
+.join-point:active {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(178, 138, 60, 0.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eeece4
+        );
+
+    box-shadow:
+        0 20px 40px rgba(11, 27, 51, 0.08),
+        0 0 24px rgba(178, 138, 60, 0.055);
+}
+
+
+.join-point:hover::before,
+.join-point:active::before {
+
+    transform: scale(1.35);
+
+    opacity: 1;
+}
+
+
+.join-point:hover::after,
+.join-point:active::after {
+
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   PAD NUMBER
+========================================================= */
+
+.join-point > span:first-child {
+
+    position: relative;
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--join-gold);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PAD ICON
+========================================================= */
+
+.join-point-icon {
+
+    position: relative;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eee9dc,
+            #e7e2d5
+        );
+
+    border:
+        1px solid
+        rgba(178, 138, 60, 0.17);
+
+    border-radius: 11px;
+
+    color: var(--join-gold);
+
+    font-size: 16px;
+
+    box-shadow:
+        inset 0 0 16px
+        rgba(178, 138, 60, 0.045);
+
+    z-index: 1;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.join-point:hover .join-point-icon,
+.join-point:active .join-point-icon {
+
+    transform: scale(1.06);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f3ecdb,
+            #e9e0cb
+        );
+
+    box-shadow:
+        0 5px 16px
+        rgba(178, 138, 60, 0.10);
+}
+
+
+/* =========================================================
+   PAD HEADING
+========================================================= */
+
+.join-point h3 {
+
+    position: relative;
+
+    margin-bottom: 8px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.3px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PAD DESCRIPTION
+========================================================= */
+
+.join-point p {
+
+    position: relative;
+
+    max-width: 470px;
+
+    color: var(--join-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BENEFIT GRID
+========================================================= */
+
+.benefit-grid {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BENEFIT CARD
+========================================================= */
+
+.benefit-card {
+
+    position: relative;
+
+    min-height: 235px;
+
+    padding: 27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f2f1ec
+        );
+
+    border: 1px solid
+        rgba(11, 27, 51, 0.08);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(11, 27, 51, 0.045);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   BENEFIT GOLD GLOW
+========================================================= */
+
+.benefit-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    top: -75px;
+    right: -65px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.15),
+            transparent 70%
+        );
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+.benefit-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--join-gold),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   BENEFIT HOVER / TOUCH
+========================================================= */
+
+.benefit-card:hover,
+.benefit-card:active {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(178, 138, 60, 0.25);
+
+    box-shadow:
+        0 20px 40px
+        rgba(11, 27, 51, 0.075),
+        0 0 24px
+        rgba(178, 138, 60, 0.045);
+}
+
+
+.benefit-card:hover::before,
+.benefit-card:active::before {
+
+    transform: scale(1.35);
+
+    opacity: 0.95;
+}
+
+
+.benefit-card:hover::after,
+.benefit-card:active::after {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   BENEFIT NUMBER
+========================================================= */
+
+.benefit-card .join-pad-number {
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   BENEFIT HEADING
+========================================================= */
+
+.benefit-card h3 {
+
+    position: relative;
+
+    margin-bottom: 12px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.4px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BENEFIT DESCRIPTION
+========================================================= */
+
+.benefit-card p {
+
+    position: relative;
+
+    color: var(--join-muted);
+
+    font-size: 12px;
+
+    line-height: 1.75;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   INFO PAD "ACTIVE" TOUCH STATE
+   Useful for phones/tablets.
+========================================================= */
+
+.join-point.is-touched,
+.benefit-card.is-touched {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(178, 138, 60, 0.35);
+
+    box-shadow:
+        0 18px 35px
+        rgba(11, 27, 51, 0.09),
+        0 0 28px
+        rgba(178, 138, 60, 0.07);
+}
+
+
+.join-point.is-touched .join-point-icon {
+
+    background: #eee5d1;
+
+    box-shadow:
+        0 0 20px
+        rgba(178, 138, 60, 0.12);
+}
+
+
+.benefit-card.is-touched::after {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .join-point,
+    .join-point::before,
+    .join-point::after,
+    .join-point-icon,
+    .benefit-card,
+    .benefit-card::before,
+    .benefit-card::after {
+
+        transition: none;
+    }
+}
+
+/* =========================================================
+   BRAVE TRADER — JOIN US
+   JOIN.CSS — PART 3/5
+   AWARDS / RECOGNITION / RISK NOTICE
+========================================================= */
+
+
+/* =========================================================
+   AWARDS SECTION
+========================================================= */
+
+.awards-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 105px 6%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f1f0ea 0%,
+            #f7f7f3 100%
+        );
+
+    border-top: 1px solid
+        rgba(11, 27, 51, 0.055);
+
+    border-bottom: 1px solid
+        rgba(11, 27, 51, 0.055);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   AWARDS BACKGROUND GLOW
+========================================================= */
+
+.awards-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: -220px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.awards-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: -160px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(11, 27, 51, 0.045),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   AWARDS HEADING
+========================================================= */
+
+.awards-heading {
+
+    position: relative;
+
+    max-width: 700px;
+
+    margin-bottom: 45px;
+
+    z-index: 1;
+}
+
+
+.awards-heading h2 {
+
+    margin-bottom: 18px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.6px;
+
+    font-weight: 800;
+}
+
+
+.awards-heading h2 span {
+
+    color: var(--join-gold);
+
+    display: block;
+}
+
+
+.awards-heading > p:not(.eyebrow) {
+
+    max-width: 600px;
+
+    color: var(--join-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   AWARDS SCROLL
+========================================================= */
+
+.awards-scroll {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(190px, 1fr));
+
+    gap: 15px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   AWARD CARD
+========================================================= */
+
+.award-card {
+
+    position: relative;
+
+    min-height: 245px;
+
+    padding: 27px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(238, 237, 230, 0.96)
+        );
+
+    border: 1px solid
+        rgba(11, 27, 51, 0.085);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(11, 27, 51, 0.045);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================================
+   AWARD CARD GLOW
+========================================================= */
+
+.award-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -85px;
+    right: -65px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.16),
+            transparent 70%
+        );
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   AWARD CARD BOTTOM ACCENT
+========================================================= */
+
+.award-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--join-gold),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   AWARD HOVER / TOUCH
+========================================================= */
+
+.award-card:hover,
+.award-card:active {
+
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(178, 138, 60, 0.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #efede5
+        );
+
+    box-shadow:
+        0 20px 42px
+        rgba(11, 27, 51, 0.08),
+        0 0 25px
+        rgba(178, 138, 60, 0.055);
+}
+
+
+.award-card:hover::before,
+.award-card:active::before {
+
+    transform: scale(1.35);
+
+    opacity: 1;
+}
+
+
+.award-card:hover::after,
+.award-card:active::after {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   AWARD NUMBER
+========================================================= */
+
+.award-number {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    margin-bottom: 27px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(178, 138, 60, 0.085);
+
+    border: 1px solid
+        rgba(178, 138, 60, 0.17);
+
+    color: var(--join-gold);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   AWARD HEADING
+========================================================= */
+
+.award-card h3 {
+
+    position: relative;
+
+    max-width: 190px;
+
+    margin-bottom: 11px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.35px;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   AWARD DESCRIPTION
+========================================================= */
+
+.award-card p {
+
+    position: relative;
+
+    color: var(--join-muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   AWARD TOUCH STATE
+========================================================= */
+
+.award-card.is-touched {
+
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(178, 138, 60, 0.35);
+
+    box-shadow:
+        0 18px 38px
+        rgba(11, 27, 51, 0.085),
+        0 0 28px
+        rgba(178, 138, 60, 0.07);
+}
+
+
+.award-card.is-touched::after {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   RISK NOTICE
+========================================================= */
+
+.join-notice {
+
+    position: relative;
+
+    width: 88%;
+
+    max-width: 1180px;
+
+    margin: 95px auto;
+
+    padding: 48px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 0.65fr)
+        minmax(0, 1.35fr);
+
+    gap: 60px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f1efe7
+        );
+
+    border: 1px solid
+        rgba(178, 138, 60, 0.20);
+
+    border-left:
+        3px solid var(--join-gold);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(11, 27, 51, 0.065);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   RISK NOTICE GLOW
+========================================================= */
+
+.join-notice::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -140px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 60, 0.11),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RISK NOTICE HEADING
+========================================================= */
+
+.join-notice-heading {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.join-notice-heading h2 {
+
+    max-width: 330px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(28px, 3vw, 40px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.3px;
+
+    font-weight: 800;
+}
+
+
+.join-notice-heading h2 span {
+
+    display: block;
+
+    color: var(--join-gold);
+}
+
+
+/* =========================================================
+   RISK CONTENT
+========================================================= */
+
+.join-notice-content {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.join-notice-content p {
+
+    position: relative;
+
+    padding-left: 21px;
+
+    color: var(--join-muted);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+.join-notice-content p + p {
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   RISK CONTENT MARKER
+========================================================= */
+
+.join-notice-content p::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    top: 8px;
+    left: 3px;
+
+    border-radius: 50%;
+
+    background: var(--join-gold);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(178, 138, 60, 0.08);
+}
+
+
+/* =========================================================
+   RISK NOTICE HOVER
+========================================================= */
+
+.join-notice {
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.join-notice:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(178, 138, 60, 0.28);
+
+    box-shadow:
+        0 24px 55px
+        rgba(11, 27, 51, 0.085);
+}
+
+
+/* =========================================================
+   TABLET AWARDS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .awards-scroll {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+
+    .benefit-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .join-notice {
+
+        width: 88%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 38px;
+    }
+
+
+    .join-notice-heading h2 {
+
+        max-width: 500px;
+    }
+
+
+    .awards-scroll {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE AWARDS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .awards-section {
+
+        padding: 75px 5%;
+    }
+
+
+    .awards-heading {
+
+        margin-bottom: 30px;
+    }
+
+
+    .awards-heading h2 {
+
+        font-size: 32px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .awards-heading h2 span {
+
+        display: inline;
+    }
+
+
+    .awards-scroll {
+
+        display: flex;
+
+        gap: 13px;
+
+        overflow-x: auto;
+
+        padding:
+            4px
+            3px
+            15px;
+
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .awards-scroll::-webkit-scrollbar {
+
+        display: none;
+    }
+
+
+    .award-card {
+
+        flex: 0 0 245px;
+
+        min-height: 225px;
+
+        scroll-snap-align: start;
+
+        padding: 24px;
+    }
+
+
+    .join-notice {
+
+        width: 90%;
+
+        margin: 70px auto;
+
+        padding: 30px 25px;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        border-left-width: 3px;
+    }
+
+
+    .join-notice-heading h2 {
+
+        font-size: 30px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .join-notice-content p {
+
+        font-size: 11px;
+
+        padding-left: 18px;
+    }
+}
+
+/* =========================================================
+   JOIN.CSS — PART 4
+   REGISTER • AGE MODAL • FOOTER • RESPONSIVE
+========================================================= */
+
+
+/* =========================================================
+   REGISTER SECTION
+========================================================= */
+
+.register-section {
+    width: 100%;
+    padding: 100px 7%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.register-card {
+    position: relative;
+    width: min(760px, 100%);
+    padding: 55px 50px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(244, 241, 232, 0.94)
+        );
+
+    border: 1px solid rgba(178, 138, 60, 0.22);
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 60px rgba(11, 27, 51, 0.09);
+
+    overflow: hidden;
+}
+
+
+.register-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    top: -130px;
+    right: -100px;
+
+    background: rgba(178, 138, 60, 0.12);
+
+    border-radius: 50%;
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+
+.register-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    bottom: -110px;
+    left: -80px;
+
+    background: rgba(11, 27, 51, 0.055);
+
+    border-radius: 50%;
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+.register-card .eyebrow,
+.register-card h2,
+.register-card > p,
+.register-card .register-button,
+.register-card .register-note {
+    position: relative;
+    z-index: 1;
+}
+
+
+.register-card h2 {
+    margin: 10px 0 18px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(28px, 4vw, 42px);
+
+    line-height: 1.12;
+
+    letter-spacing: -1.2px;
+}
+
+
+.register-card h2 span {
+    color: var(--join-gold);
+}
+
+
+.register-card > p {
+    max-width: 590px;
+
+    margin: 0 auto 28px;
+
+    color: var(--join-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.register-button {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+}
+
+
+.register-note {
+    display: block;
+
+    max-width: 500px;
+
+    margin: 18px auto 0;
+
+    color: #89919b;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   AGE VERIFICATION MODAL
+========================================================= */
+
+.age-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 5000;
+}
+
+
+.age-modal.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+.age-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(5, 15, 29, 0.68);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+.age-modal-box {
+    position: relative;
+
+    width: min(470px, 100%);
+
+    padding: 38px 34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fbfaf6,
+            #f0ede4
+        );
+
+    border: 1px solid rgba(178, 138, 60, 0.28);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.28);
+
+    text-align: center;
+
+    transform: translateY(20px) scale(0.97);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.age-modal.open .age-modal-box {
+    transform: translateY(0) scale(1);
+}
+
+
+.age-close {
+    position: absolute;
+
+    top: 14px;
+    right: 16px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(178, 138, 60, 0.16);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    color: var(--join-muted);
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.age-close:hover {
+    background: rgba(178, 138, 60, 0.1);
+
+    color: var(--join-gold);
+
+    transform: rotate(90deg);
+}
+
+
+.age-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border: 1px solid rgba(178, 138, 60, 0.28);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eee7d6,
+            #e6dfcf
+        );
+
+    color: var(--join-gold);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        inset 0 0 20px rgba(178, 138, 60, 0.06);
+}
+
+
+.age-modal-box .eyebrow {
+    margin-bottom: 8px;
+}
+
+
+.age-modal-box h2 {
+    margin-bottom: 14px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 27px;
+
+    letter-spacing: -0.7px;
+}
+
+
+.age-modal-box > p:not(.eyebrow):not(.age-warning) {
+    color: var(--join-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.age-warning {
+    margin-top: 15px;
+    padding: 13px 15px;
+
+    background: rgba(178, 138, 60, 0.07);
+
+    border: 1px solid rgba(178, 138, 60, 0.14);
+
+    border-radius: 11px;
+
+    color: #77736a;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+
+.age-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+
+.age-actions .primary-button {
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+.cancel-button {
+    width: 100%;
+
+    min-height: 46px;
+
+    border: 1px solid rgba(11, 27, 51, 0.12);
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--join-muted);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.cancel-button:hover {
+    background: rgba(11, 27, 51, 0.05);
+
+    border-color: rgba(11, 27, 51, 0.2);
+
+    color: var(--join-navy);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f3f1ea,
+            #ebe8df
+        );
+
+    border-top: 1px solid var(--join-border);
+
+    color: var(--join-navy);
+}
+
+
+.footer-main {
+    width: min(1180px, 86%);
+
+    margin: 0 auto;
+
+    padding: 65px 0 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr
+        1fr
+        0.9fr;
+
+    gap: 55px;
+
+    border-bottom: 1px solid var(--join-border);
+}
+
+
+.footer-brand .logo {
+    display: inline-flex;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-brand .logo img {
+    width: 54px;
+    height: 54px;
+
+    object-fit: contain;
+}
+
+
+.footer-brand p {
+    max-width: 280px;
+
+    color: var(--join-muted);
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+
+.footer-links {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+
+    gap: 30px;
+}
+
+
+.footer-links > div,
+.footer-social {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.footer-links h4,
+.footer-social h4 {
+    margin-bottom: 18px;
+
+    color: var(--join-navy);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
+}
+
+
+.footer-links a,
+.social-links a {
+    width: fit-content;
+
+    margin-bottom: 11px;
+
+    color: var(--join-muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.footer-links a:hover,
+.social-links a:hover {
+    color: var(--join-gold);
+
+    transform: translateX(2px);
+}
+
+
+.social-links {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   RISK DISCLAIMER
+========================================================= */
+
+.risk-disclaimer {
+    width: min(1180px, 86%);
+
+    margin: 30px auto 0;
+
+    padding: 19px 21px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    border: 1px solid var(--join-border);
+
+    border-left: 3px solid var(--join-gold);
+
+    border-radius: 10px;
+}
+
+
+.risk-disclaimer strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--join-gold);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.6px;
+}
+
+
+.risk-disclaimer p {
+    margin: 0;
+
+    color: var(--join-muted);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    width: min(1180px, 86%);
+
+    margin: 0 auto;
+
+    padding: 20px 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #89919b;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px;
+    }
+
+
+    .footer-social {
+        grid-column: 1 / -1;
+    }
+
+
+    .register-section {
+        padding: 80px 6%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .register-section {
+        padding: 65px 5%;
+    }
+
+
+    .register-card {
+        padding: 38px 24px;
+
+        border-radius: 19px;
+    }
+
+
+    .register-card h2 {
+        font-size: 28px;
+    }
+
+
+    .register-card > p {
+        font-size: 12px;
+    }
+
+
+    .age-modal {
+        padding: 18px;
+    }
+
+
+    .age-modal-box {
+        padding: 34px 22px 25px;
+
+        border-radius: 18px;
+    }
+
+
+    .age-icon {
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .age-modal-box h2 {
+        font-size: 24px;
+    }
+
+
+    .footer-main {
+        width: 90%;
+
+        padding: 45px 0 30px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .footer-brand p {
+        max-width: 330px;
+    }
+
+
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 20px;
+    }
+
+
+    .footer-social {
+        grid-column: auto;
+    }
+
+
+    .risk-disclaimer {
+        width: 90%;
+
+        margin-top: 25px;
+
+        padding: 16px;
+    }
+
+
+    .footer-bottom {
+        width: 90%;
+
+        padding: 18px 0 22px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+=====================================================
+
+
+/* =========================================================
+   TOUCH / ACTIVE STATES
+   Gives the pads a proper mobile response.
+========================================================= */
+
+.join-point:active,
+.join-info-pad:active,
+.award-card:active,
+.partner-card:active {
+    transform: scale(0.985);
+
+    border-color: rgba(178, 138, 60, 0.45);
+
+    box-shadow:
+        0 8px 25px rgba(11, 27, 51, 0.08),
+        0 0 22px rgba(178, 138, 60, 0.08);
+}
+
+
+.primary-button:active,
+.secondary-button:active,
+.register-button:active,
+.cancel-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+
+}
+
+/* =========================================================
+   JOIN.CSS — PART 5
+   FINAL POLISH + MOBILE SAFETY + REVEAL STATES
+========================================================= */
+
+
+/* =========================================================
+   FINAL SECTION SPACING
+========================================================= */
+
+.join-page {
+    overflow: hidden;
+}
+
+
+.join-hero,
+.join-info-section,
+.join-section,
+.awards-section,
+.join-notice,
+.register-section {
+    position: relative;
+}
+
+
+/* =========================================================
+   SUBTLE SECTION BACKGROUND DETAILS
+========================================================= */
+
+.join-info-section::before,
+.join-section::before,
+.awards-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(178, 138, 60, 0.045);
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+
+.join-info-section::before {
+    top: 30px;
+    right: -80px;
+}
+
+
+.join-section::before {
+    bottom: 40px;
+    left: -80px;
+}
+
+
+.awards-section::before {
+    top: 50%;
+    right: -90px;
+}
+
+
+/* =========================================================
+   PAD KEYBOARD ACCESS
+========================================================= */
+
+.join-point:focus-visible,
+.join-info-pad:focus-visible,
+.award-card:focus-visible {
+    outline: 2px solid rgba(178, 138, 60, 0.65);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   PAD ICON POLISH
+========================================================= */
+
+.join-point-icon {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.join-point:hover .join-point-icon,
+.join-point:active .join-point-icon {
+    transform: translateY(-2px);
+
+    background: #e5ddc9;
+
+    box-shadow:
+        inset 0 0 18px rgba(178, 138, 60, 0.08),
+        0 5px 15px rgba(178, 138, 60, 0.08);
+}
+
+
+/* =========================================================
+   PARTNER PAD POLISH
+========================================================= */
+
+.partner-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.partner-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(178, 138, 60, 0.34);
+
+    box-shadow:
+        0 22px 45px rgba(11, 27, 51, 0.09),
+        0 0 25px rgba(178, 138, 60, 0.055);
+}
+
+
+.partner-card:active {
+    transform: scale(0.99);
+}
+
+
+/* =========================================================
+   BENEFIT PAD POLISH
+========================================================= */
+
+.join-info-pad {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.join-info-pad:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(178, 138, 60, 0.32);
+
+    box-shadow:
+        0 18px 38px rgba(11, 27, 51, 0.08),
+        0 0 22px rgba(178, 138, 60, 0.05);
+}
+
+
+/* =========================================================
+   AWARD CARD POLISH
+========================================================= */
+
+.award-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.award-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(178, 138, 60, 0.34);
+
+    box-shadow:
+        0 18px 38px rgba(11, 27, 51, 0.08),
+        0 0 22px rgba(178, 138, 60, 0.05);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL SUPPORT
+   JOIN.JS CAN ADD .visible WHEN ELEMENT ENTERS VIEW
+========================================================= */
+
+.join-reveal {
+    opacity: 0;
+
+    transform: translateY(22px);
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+
+
+.join-reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION SAFETY
+   Keeps the dropdown inside the viewport.
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow: visible;
+    }
+
+
+    .nav-links {
+        max-width: calc(100vw - 10%);
+
+        box-sizing: border-box;
+    }
+
+
+    .nav-links a {
+        box-sizing: border-box;
+    }
+
+
+    .mobile-get-started {
+        width: 100%;
+    }
+
+
+    .menu-button {
+        flex-shrink: 0;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+
+    .navbar .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .menu-button {
+        width: 39px;
+        height: 39px;
+
+        font-size: 20px;
+    }
+
+
+    .nav-links {
+        left: 4%;
+        right: 4%;
+
+        max-width: 92vw;
+    }
+
+
+    .join-point {
+        padding: 18px;
+    }
+
+
+    .join-point h3 {
+        font-size: 15px;
+    }
+
+
+    .join-point p {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL BUTTON SAFETY
+========================================================= */
+
+.primary-button,
+.secondary-button,
+.register-button,
+.cancel-button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   BODY LOCK SUPPORT
+   JS can add this while the age modal is open.
+========================================================= */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FINAL IMAGE SAFETY
+========================================================= */
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   FINAL MOBILE MODAL HEIGHT SAFETY
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .age-modal {
+        overflow-y: auto;
+
+        align-items: center;
+    }
+
+
+    .age-modal-box {
+        max-height: calc(100vh - 36px);
+
+        overflow-y: auto;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION — FINAL OVERRIDE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .join-reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+
+    .join-point:hover,
+    .join-info-pad:hover,
+    .award-card:hover,
+    .partner-card:hover {
+        transform: none;
+    }
+
+}
+
+/* =========================================================
+   JOIN.CSS — FINAL RESPONSIVE NAVIGATION
+   ONE CLEAN SOURCE OF TRUTH
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 769px) {
+
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+        height: 72px;
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+
+        margin-left: auto;
+        margin-right: 22px;
+
+        gap: 4px;
+    }
+
+    .menu-button {
+        display: none !important;
+    }
+
+    .mobile-get-started {
+        display: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        height: 68px;
+
+        padding: 0 5%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        overflow: visible;
+    }
+
+
+    /* Logo */
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .logo-image img,
+    .navbar .logo img {
+        width: 43px;
+        height: 43px;
+
+        object-fit: contain;
+    }
+
+
+    /* Desktop CTA disappears */
+
+    .navbar > .nav-button {
+        display: none !important;
+    }
+
+
+    /* Hamburger */
+
+    .menu-button {
+
+        display: flex !important;
+
+        width: 42px;
+        height: 42px;
+
+        flex-shrink: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+
+        border:
+            1px solid
+            rgba(178, 138, 60, 0.22);
+
+        border-radius: 10px;
+
+        background:
+            rgba(255, 255, 255, 0.85);
+
+        color: var(--join-navy);
+
+        font-size: 21px;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        z-index: 2000;
+
+        transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+
+    .menu-button:active {
+        transform: scale(0.94);
+    }
+
+
+    /* Mobile menu */
+
+    .nav-links {
+
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        left: 5%;
+        right: 5%;
+
+        width: auto;
+        max-width: none;
+
+        margin: 0;
+
+        padding: 9px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+
+        background:
+            rgba(247, 247, 243, 0.98);
+
+        border:
+            1px solid
+            rgba(178, 138, 60, 0.18);
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 20px 50px
+            rgba(11, 27, 51, 0.15);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s ease;
+
+        z-index: 1500;
+    }
+
+
+    /* JS adds this class */
+
+    .nav-links.mobile-open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+
+    /* Links */
+
+    .nav-links > a,
+    .nav-links .nav-home {
+
+        width: 100%;
+
+        min-height: 44px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 10px 13px;
+
+        border-radius: 9px;
+
+        color: var(--join-text);
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        text-decoration: none;
+
+        background: transparent;
+
+        transform: none;
+    }
+
+
+    .nav-links > a:hover,
+    .nav-links .nav-home:hover {
+
+        color: var(--join-gold);
+
+        background:
+            rgba(178, 138, 60, 0.07);
+
+        transform: none;
+    }
+
+
+    /* Mobile CTA */
+
+    .mobile-get-started {
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100%;
+
+        min-height: 44px;
+
+        margin-top: 5px;
+
+        background:
+            var(--join-navy) !important;
+
+        color: #ffffff !important;
+
+        border-radius: 9px !important;
+    }
+
+
+    .mobile-get-started:hover {
+
+        background:
+            var(--join-gold) !important;
+
+        color: #ffffff !important;
+    }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+
+/* =========================================================
+   MOBILE — FINAL JOIN PAGE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .join-page {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+        width: 100%;
+        height: 64px;
+        padding: 0 5%;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .join-hero {
+        width: 100%;
+        min-height: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 38px 5% 45px;
+
+        gap: 28px;
+
+        align-items: stretch;
+    }
+
+
+    .join-hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .join-hero .eyebrow {
+        margin-bottom: 10px;
+        font-size: 9px;
+        letter-spacing: 1.7px;
+    }
+
+
+    .join-hero h1 {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 0 18px;
+
+        font-size: 32px;
+        line-height: 1.1;
+
+        letter-spacing: -1px;
+    }
+
+
+    .join-hero-content > p:not(.eyebrow) {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       HERO BUTTONS
+    ========================= */
+
+    .hero-buttons {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 20px;
+    }
+
+
+    .hero-buttons .primary-button,
+    .hero-buttons .secondary-button {
+        width: 100%;
+        min-height: 44px;
+
+        padding: 11px 15px;
+
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       PARTNERSHIP CARD
+    ========================= */
+
+    .partner-card {
+        width: 100%;
+        min-height: 0;
+
+        padding: 24px 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .partner-card h2 {
+        margin: 10px 0 14px;
+
+        font-size: 23px;
+        line-height: 1.15;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .partner-card p {
+        margin: 0;
+
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    .join-pad-label {
+        font-size: 9px;
+    }
+
+
+    /* =========================
+       SECTION HEADINGS
+    ========================= */
+
+    .join-section-heading,
+    .awards-heading,
+    .join-notice-heading {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .join-section-heading h2,
+    .awards-heading h2,
+    .join-notice-heading h2 {
+        font-size: 28px;
+        line-height: 1.15;
+
+        letter-spacing: -0.7px;
+    }
+
+
+    .join-section-heading > p:not(.eyebrow),
+    .awards-heading > p:not(.eyebrow) {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       INFORMATION
+    ========================= */
+
+    .join-info-section {
+        width: 100%;
+
+        padding: 48px 5%;
+    }
+
+
+    .join-points {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 24px;
+    }
+
+
+    .join-point {
+        width: 100%;
+        padding: 20px 17px;
+    }
+
+
+    .join-point h3 {
+        font-size: 17px;
+    }
+
+
+    .join-point p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       OUR APPROACH
+    ========================= */
+
+    .join-section {
+        width: 100%;
+
+        padding: 48px 5%;
+    }
+
+
+    .benefit-grid {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 24px;
+    }
+
+
+    .benefit-card {
+        width: 100%;
+        padding: 20px 17px;
+    }
+
+
+    .benefit-card h3 {
+        font-size: 18px;
+    }
+
+
+    .benefit-card p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       AWARDS
+    ========================= */
+
+    .awards-section {
+        width: 100%;
+
+        padding: 48px 5%;
+    }
+
+
+    .awards-heading h2 {
+        font-size: 28px;
+        line-height: 1.15;
+    }
+
+
+    .awards-scroll {
+        width: 100%;
+
+        display: flex;
+
+        gap: 12px;
+
+        overflow-x: auto;
+
+        padding-bottom: 8px;
+    }
+
+
+    .award-card {
+        flex: 0 0 240px;
+
+        padding: 20px 17px;
+    }
+
+
+    .award-card h3 {
+        font-size: 17px;
+    }
+
+
+    .award-card p {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+
+    /* =========================
+       RISK NOTICE
+    ========================= */
+
+    .join-notice {
+        width: 100%;
+
+        padding: 44px 5%;
+    }
+
+
+    .join-notice-heading h2 {
+        font-size: 28px;
+        line-height: 1.15;
+    }
+
+
+    .join-notice-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .join-notice-content p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       REGISTER
+    ========================= */
+
+    .register-section {
+        width: 100%;
+
+        padding: 48px 5%;
+    }
+
+
+    .register-card {
+        width: 100%;
+
+        padding: 26px 19px;
+
+        border-radius: 15px;
+    }
+
+
+    .register-card h2 {
+        font-size: 26px;
+        line-height: 1.15;
+    }
+
+
+    .register-card p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    .register-button {
+        width: 100%;
+    }
+
+
+    .register-note {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+    .footer-main {
+        width: 100%;
+
+        padding: 38px 5% 28px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 26px;
+    }
+
+
+    .footer-brand p {
+        max-width: 280px;
+
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    .footer-links {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+    }
+
+
+    .footer-social {
+        width: 100%;
+    }
+
+
+    footer h4 {
+        font-size: 12px;
+    }
+
+
+    footer a,
+    footer p {
+        font-size: 11px;
+        line-height: 1.55;
+    }
+
+
+    .risk-disclaimer {
+        width: 100%;
+
+        padding: 20px 5%;
+    }
+
+
+    .risk-disclaimer p {
+        font-size: 10px;
+        line-height: 1.55;
+    }
+
+
+    .footer-bottom {
+        width: 100%;
+
+        padding: 17px 5%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 5px;
+
+        align-items: flex-start;
+    }
+
+
+    .footer-bottom p {
+        font-size: 10px;
+    }
+
+}
+
+/* =========================================================
+   FINAL POLISH — SUBTLE FADE-IN ANIMATIONS
+   ========================================================= */
+
+@keyframes joinFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Hero content */
+
+.join-hero-content .eyebrow {
+    opacity: 0;
+    animation: joinFadeUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+
+.join-hero-content h1 {
+    opacity: 0;
+    animation: joinFadeUp 1s ease forwards;
+    animation-delay:1s;
+}
+
+  
+.join-hero-content > p:not(.eyebrow) {
+    opacity: 0;
+    animation: joinFadeUp 1s ease forwards;
+    animation-delay:1s;
+}
+
+
+.join-hero-content .hero-buttons {
+    opacity: 0;
+    animation: joinFadeUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+
+/* Partnership card */
+
+.partner-card {
+    opacity: 0;
+    animation: joinFadeUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+
+/* Respect users who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .join-hero-content .eyebrow,
+    .join-hero-content h1,
+    .join-hero-content > p:not(.eyebrow),
+    .join-hero-content .hero-buttons,
+    .partner-card {
+        opacity: 1;
+        animation: none;
+        transform: none;
+    }
+
+}
