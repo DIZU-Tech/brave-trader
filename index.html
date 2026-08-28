@@ -31,10 +31,67 @@
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="weather.css">
+
+<style>
+    /* =====================================================
+       BRAVE TRADER — INITIAL PAGE LOCK
+    ===================================================== */
+
+    html.brave-loading body {
+        overflow: hidden !important;
+    }
+
+    html.brave-loading body > header,
+    html.brave-loading body > main,
+    html.brave-loading body > footer,
+    html.brave-loading body > .dizu-scroll-control {
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    body > header,
+    body > main,
+    body > footer,
+    body > .dizu-scroll-control {
+        transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+
+    #brave-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #brave-loader.loader-finished {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            opacity 0.8s ease,
+            visibility 0.8s ease;
+    }
+
+    html:not(.brave-loading) body > header,
+    html:not(.brave-loading) body > main,
+    html:not(.brave-loading) body > footer,
+    html:not(.brave-loading) body > .dizu-scroll-control {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+
+<script>
+    document.documentElement.classList.add("brave-loading");
+</script>
+
 </head>
 
-
 <body>
+
 
     <!-- =====================================================
          NAVIGATION
@@ -1078,6 +1135,48 @@
 ===================================================== -->
 
 <script src="script.js"></script>
+
+<!-- =====================================================
+     DIZU SCROLL LEVER
+===================================================== -->
+
+<div class="dizu-scroll-control" id="dizu-scroll-control" aria-label="Page scroll control">
+
+    <button
+        type="button"
+        class="dizu-scroll-arrow"
+        id="dizu-scroll-up"
+        aria-label="Scroll up"
+    >
+        ↑
+    </button>
+
+    <div class="dizu-scroll-track" id="dizu-scroll-track">
+
+        <div
+            class="dizu-scroll-thumb"
+            id="dizu-scroll-thumb"
+        ></div>
+
+    </div>
+
+    <button
+        type="button"
+        class="dizu-scroll-arrow"
+        id="dizu-scroll-down"
+        aria-label="Scroll down"
+    >
+        ↓
+    </button>
+
+</div>
+
+<script src="dizu-scroll.js"></script>
+
+<script src="loader.js"></script>
+
+<script src="weather.js"></script>
+
 
 </body>
 </html>

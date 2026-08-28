@@ -19,6 +19,29 @@
         href="style.css"
     >
 
+<link rel="stylesheet" href="weather.css">
+
+<style>
+    html.brave-loading body {
+        overflow: hidden !important;
+    }
+
+    html.brave-loading .brave-page-lock {
+        visibility: hidden !important;
+    }
+
+    #brave-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        visibility: visible;
+    }
+</style>
+
+<script>
+    document.documentElement.classList.add("brave-loading");
+</script>
+
 </head>
 
 
@@ -448,6 +471,48 @@
 
 
     <script src="script.js"></script>
+
+<!-- =====================================================
+     DIZU SCROLL LEVER
+===================================================== -->
+
+<div class="dizu-scroll-control" id="dizu-scroll-control" aria-label="Page scroll control">
+
+    <button
+        type="button"
+        class="dizu-scroll-arrow"
+        id="dizu-scroll-up"
+        aria-label="Scroll up"
+    >
+        ↑
+    </button>
+
+    <div class="dizu-scroll-track" id="dizu-scroll-track">
+
+        <div
+            class="dizu-scroll-thumb"
+            id="dizu-scroll-thumb"
+        ></div>
+
+    </div>
+
+    <button
+        type="button"
+        class="dizu-scroll-arrow"
+        id="dizu-scroll-down"
+        aria-label="Scroll down"
+    >
+        ↓
+    </button>
+
+</div>
+
+<script src="dizu-scroll.js"></script>
+
+<script src="loader.js"></script>
+
+<script src="weather.js"></script>
+
 
 </body>
 

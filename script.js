@@ -893,3 +893,70 @@ document.addEventListener("DOMContentLoaded", () => {
     loadYouTubeAPI();
 
 })();
+
+/* =========================================================
+   BRAVE TRADER — SMART NAVBAR
+   Hide on scroll down / show on scroll up
+========================================================= */
+
+(function () {
+
+    const navbar = document.querySelector(".navbar");
+
+    if (!navbar) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateNavbar() {
+
+        const currentScrollY = window.scrollY;
+
+        /* Always show navbar near the top */
+        if (currentScrollY <= 20) {
+
+            navbar.classList.remove("navbar-hidden");
+
+            lastScrollY = currentScrollY;
+
+            ticking = false;
+
+            return;
+        }
+
+
+        /* Scrolling down */
+        if (currentScrollY > lastScrollY) {
+
+            navbar.classList.add("navbar-hidden");
+
+        }
+
+
+        /* Scrolling up */
+        else if (currentScrollY < lastScrollY) {
+
+            navbar.classList.remove("navbar-hidden");
+
+        }
+
+
+        lastScrollY = currentScrollY;
+
+        ticking = false;
+    }
+
+
+    window.addEventListener("scroll", function () {
+
+        if (!ticking) {
+
+            window.requestAnimationFrame(updateNavbar);
+
+            ticking = true;
+
+        }
+
+    }, { passive: true });
+
+})();
