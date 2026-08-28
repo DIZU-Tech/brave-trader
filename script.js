@@ -799,3 +799,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+/* =========================================================
+   BRAVE TRADER VIDEO — SMART AUTO PAUSE
+========================================================= */
+
+(function () {
+
+    const video = document.getElementById("brave-trader-video");
+
+    if (!video) return;
+
+
+    let player;
+
+
+    function createPlayer() {
+
+        player = new YT.Player("brave-trader-video", {
+
+            events: {
+
+                onReady: function () {
+
+                    observeVideo();
+
+                }
+
+            }
+
+        });
+
+    }
+
+
+    function observeVideo() {
+
+        const observer = new IntersectionObserver(
+
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (!entry.isIntersecting && player) {
+
+                        player.pauseVideo();
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+        observer.observe(video);
+
+    }
+
+
+    function loadYouTubeAPI() {
+
+        if (window.YT && window.YT.Player) {
+
+            createPlayer();
+
+            return;
+
+        }
+
+
+        const script = document.createElement("script");
+
+        script.src = "https://www.youtube.com/iframe_api";
+
+        document.head.appendChild(script);
+
+
+        window.onYouTubeIframeAPIReady = function () {
+
+            createPlayer();
+
+        };
+
+    }
+
+
+    loadYouTubeAPI();
+
+})();
