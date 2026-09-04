@@ -3552,119 +3552,29 @@ img {
     }
 
 
-    /* Hamburger */
+.menu-button {
+    display: flex !important;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
 
-    .menu-button {
+    align-items: center;
+    justify-content: center;
 
-        display: flex !important;
+    padding: 0;
 
-        width: 42px;
-        height: 42px;
+    border: 1px solid rgba(178, 138, 60, 0.22);
+    border-radius: 10px;
 
-        flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--join-navy);
 
-        align-items: center;
-        justify-content: center;
+    font-size: 21px;
+    line-height: 1;
 
-        padding: 0;
-
-        border:
-            1px solid
-            rgba(178, 138, 60, 0.22);
-
-        border-radius: 10px;
-
-        background:
-            rgba(255, 255, 255, 0.85);
-
-        color: var(--join-navy);
-
-        font-size: 21px;
-
-        line-height: 1;
-
-        cursor: pointer;
-
-        z-index: 2000;
-
-        transition:
-            background 0.2s ease,
-            border-color 0.2s ease,
-            transform 0.2s ease;
-    }
-
-
-    .menu-button:active {
-        transform: scale(0.94);
-    }
-
-
-    /* Mobile menu */
-
-    .nav-links {
-
-        position: absolute;
-
-        top: calc(100% + 10px);
-
-        left: 5%;
-        right: 5%;
-
-        width: auto;
-        max-width: none;
-
-        margin: 0;
-
-        padding: 9px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 4px;
-
-        background:
-            rgba(247, 247, 243, 0.98);
-
-        border:
-            1px solid
-            rgba(178, 138, 60, 0.18);
-
-        border-radius: 15px;
-
-        box-shadow:
-            0 20px 50px
-            rgba(11, 27, 51, 0.15);
-
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        transform: translateY(-8px);
-
-        transition:
-            opacity 0.2s ease,
-            transform 0.2s ease,
-            visibility 0.2s ease;
-
-        z-index: 1500;
-    }
-
-
-    /* JS adds this class */
-
-    .nav-links.mobile-open {
-
-        opacity: 1;
-
-        visibility: visible;
-
-        pointer-events: auto;
-
-        transform: translateY(0);
-    }
+    cursor: pointer;
+    z-index: 2000;
+}
 
 
     /* Links */
@@ -4554,4 +4464,320 @@ img {
 
 .navbar.navbar-hidden {
     transform: translateY(-110%);
+}
+
+/* =========================================================
+   BRAVE TRADER — MOBILE MENU FINAL OVERRIDE
+   Hamburger → X
+========================================================= */
+
+.menu-button {
+    position: relative;
+
+    background: transparent !important;
+
+    border: 1px solid rgba(178, 138, 60, 0.22) !important;
+
+    box-shadow: none !important;
+
+    color: var(--join-navy) !important;
+
+    font-size: 0 !important;
+}
+
+
+/* Draw the hamburger ourselves */
+
+.menu-button::before,
+.menu-button::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--join-navy);
+
+    transition:
+        transform 0.3s ease,
+        top 0.3s ease;
+}
+
+
+/* Top + bottom lines */
+
+.menu-button::before {
+    top: 14px;
+
+    box-shadow:
+        0 6px 0 var(--join-navy),
+        0 12px 0 var(--join-navy);
+}
+
+
+/* Open → X */
+
+.menu-button.menu-open::before {
+
+    top: 20px;
+
+    transform: rotate(45deg);
+
+    box-shadow: none;
+}
+
+
+.menu-button.menu-open::after {
+
+    top: 20px;
+
+    transform: rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU — WARM OFF-WHITE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-links.mobile-open {
+
+        background: #f3efe6 !important;
+
+        box-shadow: none !important;
+
+        filter: none !important;
+
+        backdrop-filter: none !important;
+
+        -webkit-backdrop-filter: none !important;
+    }
+
+
+    .nav-links.mobile-open::before,
+    .nav-links.mobile-open::after {
+
+        box-shadow: none !important;
+
+        filter: none !important;
+    }
+
+}
+
+/* =========================================================
+   BRAVE TRADER — FINAL MOBILE NAV OVERRIDE
+   This is the single authority for mobile navigation.
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* FORCE HAMBURGER VISIBLE */
+
+    .navbar .menu-button {
+        display: flex !important;
+
+        position: relative !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        flex: 0 0 42px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: 1px solid rgba(178, 138, 60, 0.25) !important;
+        border-radius: 10px !important;
+
+        background: #f7f7f3 !important;
+        color: #0b1b33 !important;
+
+        font-size: 21px !important;
+        line-height: 1 !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+        transform: none !important;
+
+        z-index: 99999 !important;
+    }
+
+
+    /* FORCE DESKTOP JOIN BUTTON OFF */
+
+    .navbar > .nav-button {
+        display: none !important;
+    }
+
+
+    /* FORCE MOBILE NAV CONTAINER */
+
+    .navbar .nav-links {
+        position: absolute !important;
+
+        top: calc(100% + 10px) !important;
+        left: 5% !important;
+        right: 5% !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        padding: 9px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 4px !important;
+
+        background: #f3efe6 !important;
+
+        border: 1px solid rgba(178, 138, 60, 0.18) !important;
+        border-radius: 15px !important;
+
+        box-shadow: none !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+        transform: translateY(-8px) !important;
+
+        z-index: 99998 !important;
+    }
+
+
+    /* OPEN STATE */
+
+    .navbar .nav-links.mobile-open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+        transform: translateY(0) !important;
+    }
+
+
+    /* MENU LINKS */
+
+    .navbar .nav-links > a {
+        display: flex !important;
+
+        width: 100% !important;
+        min-height: 44px !important;
+
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        padding: 10px 13px !important;
+
+        color: #182536 !important;
+
+        background: transparent !important;
+
+        border-radius: 9px !important;
+
+        transform: none !important;
+    }
+
+
+    /* MOBILE GET STARTED */
+
+    .navbar .mobile-get-started {
+        display: flex !important;
+
+        width: 100% !important;
+        min-height: 44px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin-top: 5px !important;
+
+        background: #0b1b33 !important;
+        color: #ffffff !important;
+    }
+
+}
+
+/* =========================================================
+   FINAL MENU ICON — CLEAN SINGLE ICON
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar .menu-button {
+        font-size: 0 !important;
+        overflow: hidden !important;
+    }
+
+
+    .navbar .menu-button::before,
+    .navbar .menu-button::after {
+        content: "" !important;
+
+        position: absolute !important;
+
+        left: 10px !important;
+
+        width: 22px !important;
+        height: 2px !important;
+
+        border-radius: 2px !important;
+
+        background: #0b1b33 !important;
+
+        transition:
+            transform 0.22s ease,
+            top 0.22s ease !important;
+    }
+
+
+    /* CLOSED — THREE LINES */
+
+    .navbar .menu-button::before {
+        top: 12px !important;
+
+        box-shadow:
+            0 8px 0 #0b1b33,
+            0 16px 0 #0b1b33 !important;
+    }
+
+
+    .navbar .menu-button::after {
+        display: none !important;
+    }
+
+
+    /* OPEN — X */
+
+    .navbar:has(.nav-links.mobile-open) .menu-button::before {
+        top: 20px !important;
+
+        transform: rotate(45deg) !important;
+
+        box-shadow: none !important;
+    }
+
+
+    .navbar:has(.nav-links.mobile-open) .menu-button::after {
+        display: block !important;
+
+        top: 20px !important;
+
+        transform: rotate(-45deg) !important;
+    }
+
 }

@@ -219,50 +219,131 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const menuButton = document.querySelector(".menu-button");
-    const navLinks = document.querySelector(".nav-links");
+    const menuButton =
+        document.querySelector(".menu-button");
+
+    const navLinks =
+        document.querySelector(".nav-links");
 
     if (!menuButton || !navLinks) return;
 
-    menuButton.addEventListener("click", () => {
 
-        const isOpen =
-            navLinks.classList.toggle("mobile-open");
+    /* =====================================================
+       OPEN / CLOSE MENU
+    ===================================================== */
+
+    function closeMenu() {
+
+        navLinks.classList.remove("mobile-open");
+
+        menuButton.classList.remove("menu-open");
 
         menuButton.setAttribute(
             "aria-expanded",
-            isOpen ? "true" : "false"
+            "false"
         );
 
         menuButton.setAttribute(
             "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
+            "Open navigation menu"
         );
+
+    }
+
+
+    function openMenu() {
+
+        navLinks.classList.add("mobile-open");
+
+        menuButton.classList.add("menu-open");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
+
+    }
+
+
+    /* =====================================================
+       HAMBURGER BUTTON
+    ===================================================== */
+
+    menuButton.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        const isOpen =
+            navLinks.classList.contains("mobile-open");
+
+        if (isOpen) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
 
     });
 
 
-    /* Close menu after selecting a link */
+    /* =====================================================
+       CLICK ANYWHERE OUTSIDE MENU
+    ===================================================== */
+
+    document.addEventListener("click", (event) => {
+
+        const clickedInsideMenu =
+            navLinks.contains(event.target);
+
+        const clickedMenuButton =
+            menuButton.contains(event.target);
+
+        if (
+            !clickedInsideMenu &&
+            !clickedMenuButton
+        ) {
+
+            closeMenu();
+
+        }
+
+    });
+
+
+    /* =====================================================
+       CLOSE AFTER SELECTING A LINK
+    ===================================================== */
 
     navLinks.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
-            navLinks.classList.remove("mobile-open");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuButton.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
+            closeMenu();
 
         });
+
+    });
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            closeMenu();
+
+        }
 
     });
 
